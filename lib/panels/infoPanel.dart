@@ -51,8 +51,11 @@ class BottomButtons extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-            color: kPrimaryBlack,
-            borderRadius: BorderRadius.all(Radius.circular(10))),
+          color: kPrimaryBlack,
+          borderRadius: BorderRadius.all(
+            Radius.circular(10),
+          ),
+        ),
         padding: EdgeInsets.symmetric(vertical: 12, horizontal: 10),
         margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
         child: Row(
@@ -66,7 +69,7 @@ class BottomButtons extends StatelessWidget {
                   fontSize: 18),
             ),
             Icon(
-              Icons.arrow_forward,
+              Icons.arrow_forward_ios,
               color: Colors.white,
             )
           ],

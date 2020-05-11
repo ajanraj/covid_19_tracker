@@ -38,12 +38,16 @@ class _CountryPageState extends State<CountryPage> {
           ),
         ),
         actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {
-              showSearch(context: context, delegate: Search(countryData));
-            },
-          )
+          countryData == null
+              ? Center(
+                  child: CupertinoActivityIndicator(),
+                )
+              : IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: () {
+                    showSearch(context: context, delegate: Search(countryData));
+                  },
+                )
         ],
         title: Text('Country Stats'),
       ),
