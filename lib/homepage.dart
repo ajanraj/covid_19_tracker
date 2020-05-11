@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
   Future fetchData() async {
     fetchWorldWideData();
     fetchCountryData();
-    print('fetchData called');
+//    print('fetchData called');
   }
 
   @override
@@ -118,20 +118,22 @@ class _HomePageState extends State<HomePage> {
                 : WorldwidePanel(
                     worldData: worldData,
                   ),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
-              child: Center(
-                child: Text(
-                  'Most Affected Countries',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
+            countryData == null
+                ? Container()
+                : Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10.0, vertical: 10),
+                    child: Center(
+                      child: Text(
+                        'Most Affected Countries',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-            ),
             SizedBox(
               height: 10,
             ),
