@@ -53,6 +53,7 @@ class Search extends SearchDelegate {
         itemCount: suggestionList.length,
         itemBuilder: (context, index) {
           return Card(
+            elevation: 3,
             child: Container(
               height: 130,
               margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -85,19 +86,25 @@ class Search extends SearchDelegate {
                           'CONFIRMED:' +
                               suggestionList[index]['cases'].toString(),
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.red),
+                              fontWeight: FontWeight.bold,
+                              color: Colors.red,
+                              letterSpacing: 1),
                         ),
                         Text(
                           'ACTIVE:' +
                               suggestionList[index]['active'].toString(),
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.blue),
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue,
+                              letterSpacing: 1),
                         ),
                         Text(
                           'RECOVERED:' +
                               suggestionList[index]['recovered'].toString(),
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.green),
+                              fontWeight: FontWeight.bold,
+                              color: Colors.green,
+                              letterSpacing: 1),
                         ),
                         Text(
                           'DEATHS:' +
@@ -107,7 +114,8 @@ class Search extends SearchDelegate {
                               color: Theme.of(context).brightness ==
                                       Brightness.dark
                                   ? Colors.grey[100]
-                                  : Colors.grey[900]),
+                                  : Colors.grey[900],
+                              letterSpacing: 1),
                         ),
                       ],
                     ),

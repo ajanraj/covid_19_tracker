@@ -58,6 +58,7 @@ class _CountryPageState extends State<CountryPage> {
           : ListView.builder(
               itemBuilder: (context, index) {
                 return Card(
+                  elevation: 3,
                   margin: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
 //                  elevation: 10,
                   child: Container(
@@ -90,35 +91,39 @@ class _CountryPageState extends State<CountryPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Text(
-                                'CONFIRMED:' +
+                                'CONFIRMED : ' +
                                     countryData[index]['cases'].toString(),
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.red),
+                                    color: Colors.red,
+                                    letterSpacing: 1),
                               ),
                               Text(
-                                'ACTIVE:' +
+                                'ACTIVE : ' +
                                     countryData[index]['active'].toString(),
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.blue),
+                                    color: Colors.blue,
+                                    letterSpacing: 1),
                               ),
                               Text(
-                                'RECOVERED:' +
+                                'RECOVERED : ' +
                                     countryData[index]['recovered'].toString(),
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.green),
+                                    color: Colors.green,
+                                    letterSpacing: 1),
                               ),
                               Text(
-                                'DEATHS:' +
+                                'DEATHS : ' +
                                     countryData[index]['deaths'].toString(),
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Theme.of(context).brightness ==
                                             Brightness.dark
                                         ? Colors.grey[100]
-                                        : Colors.grey[900]),
+                                        : Colors.grey[900],
+                                    letterSpacing: 1),
                               ),
                             ],
                           ),

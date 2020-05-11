@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 Color kPrimaryBlack = Color(0xff202c3b);
+Color kDarkButton = Color(0x80121212);
 
 class DataSource {
   static String quote =

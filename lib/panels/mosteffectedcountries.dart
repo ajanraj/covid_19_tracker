@@ -18,10 +18,17 @@ class MostAffectedPanel extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                   child: Card(
+                    elevation: 3,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                    ),
                     child: ListTile(
                       leading: Image.network(
                         countryData[index]['countryInfo']['flag'],
                         height: 25,
+                        width: 25,
                       ),
                       title: Text(
                         countryData[index]['country'],

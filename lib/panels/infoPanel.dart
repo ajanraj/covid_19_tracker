@@ -51,7 +51,9 @@ class BottomButtons extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: kPrimaryBlack,
+          color: Theme.of(context).brightness == Brightness.dark
+              ? kDarkButton
+              : kPrimaryBlack,
           borderRadius: BorderRadius.all(
             Radius.circular(10),
           ),

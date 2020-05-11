@@ -3,7 +3,7 @@ import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:covid19tracker/datasource.dart';
-import 'package:covid19tracker/pages/countyPage.dart';
+import 'package:covid19tracker/pages/countryPage.dart';
 import 'package:covid19tracker/panels/infoPanel.dart';
 import 'package:covid19tracker/panels/mosteffectedcountries.dart';
 import 'package:covid19tracker/panels/worldwidepanel.dart';
@@ -48,6 +48,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? kDarkButton
+            : kPrimaryBlack,
+        elevation: 5,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(10),
@@ -98,7 +102,9 @@ class _HomePageState extends State<HomePage> {
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                          color: kPrimaryBlack,
+                          color: Theme.of(context).brightness == Brightness.dark
+                              ? kDarkButton
+                              : kPrimaryBlack,
                           borderRadius: BorderRadius.circular(10)),
                       padding: EdgeInsets.all(10),
                       child: Text(
