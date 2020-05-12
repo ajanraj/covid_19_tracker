@@ -35,9 +35,10 @@ class MostAffectedPanel extends StatelessWidget {
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       trailing: Text(
-                        'Deaths:' + countryData[index]['deaths'].toString(),
+                        'Deaths : ' + countryData[index]['deaths'].toString(),
                         style: TextStyle(
                             color: Colors.red, fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.left,
                       ),
                     ),
                   ),

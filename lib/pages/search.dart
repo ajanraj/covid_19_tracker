@@ -10,7 +10,12 @@ class Search extends SearchDelegate {
   @override
   ThemeData appBarTheme(BuildContext context) {
     return ThemeData(
-        primaryColor: kPrimaryBlack,
+        appBarTheme: AppBarTheme(
+          elevation: 5,
+        ),
+        primaryColor: Theme.of(context).brightness == Brightness.dark
+            ? kDarkButton
+            : kPrimaryBlack,
         brightness: DynamicTheme.of(context).brightness);
   }
 
@@ -53,9 +58,10 @@ class Search extends SearchDelegate {
         itemCount: suggestionList.length,
         itemBuilder: (context, index) {
           return Card(
+            margin: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
             elevation: 3,
             child: Container(
-              height: 130,
+              height: 110,
               margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: Row(
                 children: <Widget>[
@@ -81,41 +87,42 @@ class Search extends SearchDelegate {
                   Expanded(
                       child: Container(
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          'CONFIRMED:' +
+                          'CONFIRMED : ' +
                               suggestionList[index]['cases'].toString(),
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.red,
-                              letterSpacing: 1),
+                            fontWeight: FontWeight.bold,
+                            color: Colors.red,
+                          ),
                         ),
                         Text(
-                          'ACTIVE:' +
+                          'ACTIVE : ' +
                               suggestionList[index]['active'].toString(),
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.blue,
-                              letterSpacing: 1),
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue,
+                          ),
                         ),
                         Text(
-                          'RECOVERED:' +
+                          'RECOVERED : ' +
                               suggestionList[index]['recovered'].toString(),
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.green,
-                              letterSpacing: 1),
+                            fontWeight: FontWeight.bold,
+                            color: Colors.green,
+                          ),
                         ),
                         Text(
-                          'DEATHS:' +
+                          'DEATHS : ' +
                               suggestionList[index]['deaths'].toString(),
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Theme.of(context).brightness ==
-                                      Brightness.dark
-                                  ? Colors.grey[100]
-                                  : Colors.grey[900],
-                              letterSpacing: 1),
+                            fontWeight: FontWeight.bold,
+                            color:
+                                Theme.of(context).brightness == Brightness.dark
+                                    ? Colors.grey[100]
+                                    : Colors.grey[900],
+                          ),
                         ),
                       ],
                     ),

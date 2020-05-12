@@ -8,6 +8,7 @@ import 'package:covid19tracker/panels/infoPanel.dart';
 import 'package:covid19tracker/panels/mosteffectedcountries.dart';
 import 'package:covid19tracker/panels/worldwidepanel.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -16,10 +17,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   Map worldData;
+  String dateFormatted;
   fetchWorldWideData() async {
     http.Response response = await http.get('https://corona.lmao.ninja/v2/all');
     setState(() {
       worldData = json.decode(response.body);
+      var date = DateTime.fromMillisecondsSinceEpoch(worldData['updated']);
+      var formatter = new DateFormat('EEE, d/M/y').add_jm();
+      dateFormatted = formatter.format(date);
     });
   }
 
@@ -83,6 +88,17 @@ class _HomePageState extends State<HomePage> {
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            SizedBox(height: 10),
+            Container(
+              child: worldData == null
+                  ? Container()
+                  : Center(
+                      child: Text(
+                        'Last Updated on ' + dateFormatted,
+                        style: TextStyle(fontSize: 14),
+                      ),
+                    ),
+            ),
             Padding(
               padding:
                   const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
