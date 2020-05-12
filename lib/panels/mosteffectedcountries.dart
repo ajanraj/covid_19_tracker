@@ -27,17 +27,20 @@ class MostAffectedPanel extends StatelessWidget {
                     child: ListTile(
                       leading: Image.network(
                         countryData[index]['countryInfo']['flag'],
-                        height: 25,
-                        width: 25,
+                        height: 30,
+                        width: 30,
                       ),
                       title: Text(
                         countryData[index]['country'],
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400, letterSpacing: 1),
                       ),
                       trailing: Text(
                         'Deaths : ' + countryData[index]['deaths'].toString(),
                         style: TextStyle(
-                            color: Colors.red, fontWeight: FontWeight.bold),
+                            color: Colors.red,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 1),
                         textAlign: TextAlign.left,
                       ),
                     ),

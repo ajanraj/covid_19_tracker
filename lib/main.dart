@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       data: (brightness) {
         return ThemeData(
             primaryColor: kPrimaryBlack,
-            fontFamily: 'Poppins',
+            fontFamily: 'Montserrat',
             brightness: brightness == Brightness.light
                 ? Brightness.light
                 : Brightness.dark,

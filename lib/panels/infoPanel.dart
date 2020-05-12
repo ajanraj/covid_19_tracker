@@ -50,6 +50,7 @@ class BottomButtons extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        height: 55,
         decoration: BoxDecoration(
           color: Theme.of(context).brightness == Brightness.dark
               ? kDarkButton
